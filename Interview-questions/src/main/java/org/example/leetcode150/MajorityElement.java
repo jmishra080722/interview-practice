@@ -14,7 +14,7 @@ public class MajorityElement {
 
     public static void main(String[] args) {
         int[] nums = {1};
-        System.out.println(majorityElement2(nums));
+        System.out.println(majorityElement(nums));
     }
 
     private static int majorityElement2(int[] nums) {
@@ -23,7 +23,7 @@ public class MajorityElement {
         for(int a: nums){
             int val = map.getOrDefault(a, 0) +1;
             if(val > nums.length/2){
-                return a;
+                 return a;
             }
             map.put(a, val);
         }
