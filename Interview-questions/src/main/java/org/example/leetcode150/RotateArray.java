@@ -30,12 +30,11 @@ public class RotateArray {
     private static void rotate2(int[] nums, int k) {
         int len = nums.length;
         k = k%len;   //Ensure that k should be less than len;
-        //1, 2, 3, 4, 5, 6, 7 -> 7, 6, 5,4 ,3 ,2 ,1
-        //7, 6, 5, 4 ,3 ,2 ,1 -> 7, 6, 5, 1, 2, 3, 4
-        //7, 6, 5, 1, 2, 3, 4 -> 5, 6, 7, 1, 2, 3, 4,
-        reverse(nums, 0 , len-1);
-        reverse(nums, k, len-1);
-        reverse(nums, 0, k-1);
+
+        //TODO: 1, 2, 3, 4, 5, 6, 7 -> 5, 6, 7,1,2 ,3 ,4
+        reverse(nums, 0 , len-1);  //1, 2, 3, 4, 5, 6, 7 -> 7, 6, 5,4 ,3 ,2 ,1
+        reverse(nums, k, len-1);   //7, 6, 5, 4 ,3 ,2 ,1 -> 7, 6, 5, 1, 2, 3, 4
+        reverse(nums, 0, k-1);   //7, 6, 5, 1, 2, 3, 4 -> 5, 6, 7, 1, 2, 3, 4,
     }
 
     private static void reverse(int[] arr, int start, int end){
