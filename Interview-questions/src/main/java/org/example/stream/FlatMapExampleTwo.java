@@ -15,7 +15,7 @@ public class FlatMapExampleTwo {
         //Print square of all elements in a single list
         List<Integer> collect = listOfList.stream()
                 .flatMap(List::stream)
-                //.map(n -> n * n)
+                .map(n -> n * n)
                 .collect(Collectors.toList());
         System.out.println(collect);
     }
