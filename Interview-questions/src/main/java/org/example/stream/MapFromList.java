@@ -20,7 +20,7 @@ public class MapFromList {
                 .collect(Collectors.toMap(Employee::getEmpId,
                                                             Employee::getFirstName));
         System.out.println(empMap);
-
+        System.out.println("====================");
         //Task 2: Get employee with 2nd highest salary
         Optional<Employee> empWithSecondHighestSalary = empList.stream()
                 .sorted(Comparator.comparing(Employee::getSalary).reversed())

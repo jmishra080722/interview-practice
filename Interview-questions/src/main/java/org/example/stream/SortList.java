@@ -1,6 +1,7 @@
 package org.example.stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,7 +11,7 @@ public class SortList {
         List<String> strings = Arrays.asList("apple", "banana", "kiwi", "strawberry", "orange", "grape");
 
         List<String> sortedList = strings.stream()
-                .sorted((s1, s2) -> Integer.compare(s1.length(), s2.length()))
+                .sorted(Comparator.comparingInt(String::length))  //.sorted((s1, s2) -> Integer.compare(s1.length(), s2.length()))
                 .collect(Collectors.toList());
 
         System.out.println(sortedList);

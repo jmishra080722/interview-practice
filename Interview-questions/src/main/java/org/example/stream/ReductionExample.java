@@ -25,6 +25,7 @@ public class ReductionExample {
         //Find the number of characters in the sentence
         String sentence =  "This is stream reduction example learn well";
         List<String> words =Arrays.asList(sentence.split(" "));
+        System.out.println(words);
         //reduce with two args
         Integer numOfChars = words.stream().map(str -> str.length()).reduce(0, (i, j) -> i + j);
         System.out.println("Number of characters in the sentence is: "+numOfChars);
