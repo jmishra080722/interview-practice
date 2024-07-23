@@ -3,6 +3,12 @@ package org.example.uber.section2;
 
 import java.util.*;
 
+
+/*
+You are given two integer arrays nums1 and nums2 sorted in non-decreasing order and an integer k.
+Define a pair (u, v) which consists of one element from the first array and one element from the second array.
+Return the k pairs (u1, v1), (u2, v2), ..., (uk, vk) with the smallest sums.
+ */
 public class FindKPairsWithSmallestSums {
 
     public static void main(String[] args) {
@@ -10,14 +16,14 @@ public class FindKPairsWithSmallestSums {
         int[] nums2 = {2,4,9};
         int k = 3;
 
-        List<int[]> list = kSmallestPairs(nums1, nums2, k);
-        for (int[] pair : list) {
-            System.out.println(Arrays.toString(pair));
+        List<List<Integer>> list = kSmallestPairs(nums1, nums2, k);
+        for (List<Integer> pair : list) {
+            System.out.println(pair);
         }
     }
 
-    private static List<int[]> kSmallestPairs(int[] nums1, int[] nums2, int k) {
-        List<int[]> result = new ArrayList<>();
+    private static List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
+        List<List<Integer>> result = new ArrayList<>();
        if (nums1.length == 0 || nums2.length == 0 || k == 0){
            return result;
        }
@@ -33,7 +39,7 @@ public class FindKPairsWithSmallestSums {
            int[] current = minHeap.poll();
            int i = current[1];
            int j = current[2];
-           result.add(new int[]{nums1[i], nums2[j]});
+           result.add(Arrays.asList(nums1[i], nums2[j]));
            k--;
            if( i + 1 < nums1.length){
                minHeap.offer(new int[]{nums1[i+1] + nums2[j], i + 1, j});

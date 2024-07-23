@@ -23,6 +23,7 @@ public class IsBinarySearchTree {
             if(prev >= inOrderList.get(i)){
                 isBST = false;
             }
+            prev = inOrderList.get(i);
         }
         return isBST;
     }

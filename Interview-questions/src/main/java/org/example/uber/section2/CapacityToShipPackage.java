@@ -1,13 +1,41 @@
 package org.example.uber.section2;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CapacityToShipPackage {
     public static void main(String[] args) {
-        //int[] weights = {1,2,3,4,5,6,7,8,9,10};
-        //int days = 5;
-        int [] weights = {3,2,2,4,1,4};
-        int days = 3;
+        int[] weights = {1,2,3,4,5,6,7,8,9,10};
+        int days = 5;
+        /*int [] weights = {3,2,2,4,1,4};
+        int days = 3;*/
         int minCapacityToShip = shipWithinDays(weights, days);
         System.out.println(minCapacityToShip);
+    }
+
+    private static int shipWithinDays2(int[] weights, int days) {
+        int minCapacity = 0;
+        int maxCapacity = 0;
+        for(int weight: weights){
+            minCapacity = Math.max(minCapacity, weight);
+            maxCapacity +=weight;
+        }
+        while (minCapacity <=maxCapacity){
+            int currentCapacity=0;
+            int dayNeeded = 1;
+            for(int weight: weights){
+                currentCapacity +=weight;
+                if(currentCapacity > minCapacity){
+                    dayNeeded++;
+                    currentCapacity =weight;
+                }
+            }
+            if(dayNeeded == days){
+                return minCapacity;
+            }
+            minCapacity++;
+        }
+        return 0;
     }
 
     private static int shipWithinDays(int[] weights, int days) {
