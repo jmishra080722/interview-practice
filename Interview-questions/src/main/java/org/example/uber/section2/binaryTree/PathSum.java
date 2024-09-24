@@ -27,6 +27,18 @@ public class PathSum {
         System.out.println("Path found: "+pathFound);
     }
 
+    private static boolean isPathPresent2(TreeNode root, int targetSum) {
+        if(root == null){
+            return false;
+        }
+        targetSum -=root.val;
+        if(root.left == null && root.right == null){
+            return targetSum == 0;
+        }else {
+            return isPathPresent2(root.left, targetSum) || isPathPresent2(root.right, targetSum);
+        }
+    }
+
     private static boolean isPathPresent(TreeNode root, int pathVal) {
 
         Stack<TreeNode> nodes = new Stack<>();
