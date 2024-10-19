@@ -1,7 +1,5 @@
 package org.example.uber.section2;
 
-import org.example.uber.inheritance.A;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

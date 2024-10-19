@@ -1,7 +1,5 @@
 package org.example.uber.section2.binaryTree;
 
-import org.example.uber.inheritance.A;
-
 import java.util.*;
 /*
 Given the root of a binary tree, return its maximum depth.
