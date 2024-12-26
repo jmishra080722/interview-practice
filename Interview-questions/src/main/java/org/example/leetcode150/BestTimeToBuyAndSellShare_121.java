@@ -5,7 +5,9 @@ You want to maximize your profit by choosing a single day to buy one stock and
 choosing a different day in the future to sell that stock.
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
  */
-public class BestTimeToBuyAndSellShare {
+//Q: 121. Best Time to Buy and Sell Stock
+//URL: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/?envType=study-plan-v2&envId=top-interview-150
+public class BestTimeToBuyAndSellShare_121 {
 
     public static void main(String[] args) {
         int[] prices = {7,1,5,3,6,4};
