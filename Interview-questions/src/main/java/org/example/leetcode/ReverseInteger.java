@@ -2,11 +2,28 @@ package org.example.leetcode;
 
 public class ReverseInteger {
     public static void main(String[] args) {
-        int input = -987;
-        int output = revers1(input);
+        int input = -1534236469;
+        int output = revers2(input);
         System.out.println(output);
     }
 
+    private static int revers2(int x) {
+        int result = 0;
+        int prevValue = 0;
+        while (x != 0){
+            int unit = x%10;
+            result = result *10 + unit;
+            if((result - unit)/10 != prevValue){
+                return 0;
+            }
+            prevValue = result;
+            x = x/10;
+        }
+        return result;
+    }
+
+
+    //This will check result by comparing the Integer.MAX and Integer.MIN
     private static int revers1(int x) {
         int result = 0;
         try{
