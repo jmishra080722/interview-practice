@@ -17,7 +17,7 @@ public class RemoveDuplicatesfromSortedArray_26 {
     public static void main(String[] args) {
         int[] arr = {1,1,2};
         Util.print(arr);
-        System.out.println(removeDuplicates2(arr));
+        System.out.println(removeDuplicates(arr));
         Util.print(arr);
     }
 
@@ -27,7 +27,7 @@ public class RemoveDuplicatesfromSortedArray_26 {
         for(int i =0; i<nums.length; i++ ){
             int val = nums[i];
             if(!map.containsKey(val)){
-                map.put(val, 1);
+                map.put(val, i);
                 nums[count] = val;
                 count++;
             }
