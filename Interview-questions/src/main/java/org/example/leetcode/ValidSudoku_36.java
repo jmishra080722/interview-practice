@@ -19,9 +19,9 @@ public class ValidSudoku_36 {
     }
 
     private static boolean isValidSudoku(String[][] board) {
-        Map<Integer, Set<String>> rows = new HashMap<>();
-        Map<Integer, Set<String>> columns = new HashMap<>();
-        Map<String, Set<String>> squares = new HashMap<>();
+        Map<Integer, Set<String>> rows = new HashMap<>();  //To keep track of rows
+        Map<Integer, Set<String>> columns = new HashMap<>(); //To keep track of columns
+        Map<String, Set<String>> squares = new HashMap<>();  //To keep track of different boxes
         for(int r = 0; r < 9; r++){
             for(int c  = 0; c < 9;  c++){
                 String currentStr = board[r][c];
