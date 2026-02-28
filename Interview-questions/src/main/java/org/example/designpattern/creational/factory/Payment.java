@@ -1,4 +1,4 @@
-package org.example.designpattern.structural.factory;
+package org.example.designpattern.creational.factory;
 
 public interface Payment {
 
